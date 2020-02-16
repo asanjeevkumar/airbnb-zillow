@@ -6,6 +6,7 @@ import pandas as pd
 import utils
 
 SOURCE_DATA_NAME = "source_data"
+OUTPUT_GRAPH_FOLDER = "output/graphs"
 AIRBNB_FILE_NAME = "listings.csv"
 ZILLOW_FILE_NAME = "Zip_Zhvi_2bedroom.csv"
 
@@ -38,7 +39,7 @@ def main():
             path.join(dir_path, '..', SOURCE_DATA_NAME, ZILLOW_FILE_NAME),
             encoding='latin-1'
         )
-    utils.create_plots(airbnb_df, zillow_df)
+    utils.create_plots(airbnb_df, zillow_df, output_dir=path.join(dir_path, '..', OUTPUT_GRAPH_FOLDER))
     # ax = airbnb_df.plot.barh(x="bedrooms", y="price")
 
 
